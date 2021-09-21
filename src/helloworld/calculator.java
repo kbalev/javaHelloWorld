@@ -40,6 +40,8 @@ public class calculator {
 //        Colour orange = new Colour();
 
 
+
+
         double litPerSqrMet = 3.56;
         int litPerTin = 6;
         double pricePerTin = 42.99;
@@ -63,6 +65,10 @@ public class calculator {
                 tinsReq = Math.ceil(((tinsReq*2)/3));
                 totalPrice = tinsReq*pricePerTin;
             }
+        }
+
+        for (int i=5; i>=0; i-- ){
+            System.out.println("We are calculating your order. Please wait another " + i + " seconds.");
         }
 
         if (weekday < 4){
