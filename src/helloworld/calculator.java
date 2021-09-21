@@ -1,10 +1,12 @@
 package helloworld;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class calculator {
     public static void main(String[] args){
 
-
+        String[] paints = {"red", "black", "blue", "orange"};
+        String[] tinSize = {"small", "medium", "large"};
         int weekday = (int) (Math.round(Math.random())*7+1);
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter the dimensions of the wall you want to paint.");
@@ -38,7 +40,12 @@ public class calculator {
 //        Colour white = new Colour();
 //        Colour red = new Colour();
 //        Colour orange = new Colour();
+        System.out.println("Your paint options are as follows: ");
+        for ( String paint :paints ) {
+            System.out.println(paint);
+        }
 
+        HashMap<String, String> paintOptions = new HashMap<String, String>();
 
 
 
