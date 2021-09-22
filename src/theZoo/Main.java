@@ -1,5 +1,8 @@
-package helloworld;
+package theZoo;
 //make sure not to add things to the package with no name
+
+import theZoo.Cat;
+import theZoo.DuckBilledPlatypuss;
 
 public class Main {
     //public class can be used by anything
@@ -45,6 +48,21 @@ public class Main {
         String theOtherOne = "1";
         System.out.println(one+theOtherOne);
         System.out.println(1+"1");
+
+        Cat c = new Cat();
+        c.setName("Tiddles");
+        System.out.println(c.getName());
+        System.out.println(c.purr());
+        c.breathe();
+        c.eat();
+        c.die();
+        c.reproduce();
+        c.sleep();
+        DuckBilledPlatypuss perry = new DuckBilledPlatypuss();
+        perry.reproduce();
+
+
+
 
 
 
