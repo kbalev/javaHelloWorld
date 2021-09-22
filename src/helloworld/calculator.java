@@ -37,7 +37,7 @@ public class calculator {
             System.out.println(paint);
         }
 
-
+        // Adding this to have an extra commit and be on level with Harrison
         double litPerSqrMet = 3.56;
         int litPerTin = 6;
         double pricePerTin = 42.99;
