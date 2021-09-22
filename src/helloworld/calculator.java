@@ -3,50 +3,39 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class calculator {
-    public static void main(String[] args){
+    public static void print(String text){
+        System.out.println(text);
+    }
+    public static int weekday(){
+        return (int) (Math.round(Math.random())*7+1);
+    };
+    public static void main(String[] args) throws InterruptedException {
 
         String[] paints = {"red", "black", "blue", "orange"};
-        String[] tinSize = {"small", "medium", "large"};
-        int weekday = (int) (Math.round(Math.random())*7+1);
+        int weekday = weekday();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter the dimensions of the wall you want to paint.");
-        System.out.println("Height: ");
+        print("Please enter the dimensions of the wall you want to paint.");
+        print("Height: ");
         int sideA = sc.nextInt();
-        System.out.println("Width: ");
+        print("Width: ");
         int sideB = sc.nextInt();
         int wallArea = sideA*sideB;
-        System.out.println("Does the wall have any windows or doors?");
+        print("Does the wall have any windows or doors?");
         boolean windows = sc.nextBoolean();
 
         if (windows) {
-            System.out.println("What is the total length of all windows and doors on this wall?");
+            print("What is the total length of all windows and doors on this wall?");
             int emptyA = sc.nextInt();
-            System.out.println("What is the total height of all windows and doors on this wall?");
+            print("What is the total height of all windows and doors on this wall?");
             int emptyB = sc.nextInt();
             int emptyArea = emptyA*emptyB;
             wallArea = wallArea-emptyArea;
         }
-//          Trying to create objects, will fix later
-        //
-//        System.out.println("Would you like the room to be painted black, white, red, orange or green?")
-//        String colour = sc.nextLine();
-//        class Colour {
-//            double litPerSqrMet = 0;
-//            int litPerTin = 0;
-//            double pricePerTin = 0;
-//        };
-//
-//        Colour black = new Colour();
-//        Colour white = new Colour();
-//        Colour red = new Colour();
-//        Colour orange = new Colour();
-        System.out.println("Your paint options are as follows: ");
+
+        print("Your paint options are as follows: ");
         for ( String paint :paints ) {
             System.out.println(paint);
         }
-
-        HashMap<String, String> paintOptions = new HashMap<String, String>();
-
 
 
         double litPerSqrMet = 3.56;
@@ -60,30 +49,31 @@ public class calculator {
 
         switch (weekday) {
             case 1 -> {
-                System.out.println("It's Monday and we have a 10% discount on all paint!");
+                print("It's Monday and we have a 10% discount on all paint!");
                 totalPrice = totalPrice * 0.9;
             }
             case 2 -> {
-                System.out.println("It's Tuesday and we have a 20% discount on all paint!");
+                print("It's Tuesday and we have a 20% discount on all paint!");
                 totalPrice = totalPrice * 0.8;
             }
             case 3 -> {
-                System.out.println("It's Wednesday and we have a 2-for-1 deal on all paint!");
+                print("It's Wednesday and we have a 2-for-1 deal on all paint!");
                 tinsReq = Math.ceil(((tinsReq*2)/3));
                 totalPrice = tinsReq*pricePerTin;
             }
         }
 
         for (int i=5; i>=0; i-- ){
-            System.out.println("We are calculating your order. Please wait another " + i + " seconds.");
+            print("We are calculating your order. Please wait another " + i + " seconds.");
+            Thread.sleep(1000);
         }
 
         if (weekday < 4){
-            System.out.println("Thank you for choosing to shop with us today, we hope you were satisfied with the deals on offer");
+            print("Thank you for choosing to shop with us today, we hope you were satisfied with the deals on offer");
         } else {
-            System.out.println("Thank you for shopping with us today, we hope you come again soon. If you come early next week, you may be able to snag some of our special offers.");
+            print("Thank you for shopping with us today, we hope you come again soon. If you come early next week, you may be able to snag some of our special offers.");
         }
-        System.out.println("£"+totalPrice);
+        print("£"+totalPrice);
 
     }
 }
