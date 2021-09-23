@@ -1,5 +1,4 @@
-package helloworld;
-import java.util.HashMap;
+package java;
 import java.util.Scanner;
 
 public class calculator {

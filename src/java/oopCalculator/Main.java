@@ -1,4 +1,4 @@
-package helloworld.oopCalculator;
+package java.oopCalculator;
 
 import java.util.Scanner;
 
