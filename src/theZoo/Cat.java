@@ -14,7 +14,7 @@ public class Cat extends Mammal{
         this("Moggy");
     };
     public Cat(String name){
-        this(name, LocalDate.now());
+        this(name, LocalDate.now(), "DSH");
 
     }
 
